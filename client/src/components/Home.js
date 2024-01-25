@@ -8,17 +8,14 @@ function Home() {
     description: []
   });
   useEffect(() => {
-    getdata('/api/home-page').then((d) => {
-      setData(d)
-      console.log(data)
-    })
+    getdata('/api/home-page').then((d) => setData(d))
   }, []);
   return (
     <div>
       <h4>{data.subHeading}</h4>
       <h1>{data.heading}</h1>
       <ul>
-        {data.description.forEach((item, index) => <li key={index}>{item}</li>)}
+        {data.description.map((item, index) => <li key={index}>{item}</li>)}
       </ul>
     </div>
   )

@@ -8,4 +8,5 @@ client/build/
 # app dependencies and venv
 app/venv/
 
-# app production
+# app 
+app/app.live.py
