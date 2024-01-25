@@ -1,11 +1,11 @@
 # client dependencies
-client/node_modules
+client/node_modules/
 
 # client production
-client/build
+client/build/
 
 
 # app dependencies and venv
-app/venv
+app/venv/
 
 # app production
