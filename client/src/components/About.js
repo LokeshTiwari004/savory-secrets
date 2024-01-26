@@ -1,23 +1,31 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
+import getdata from '../getdata';
+import Point from './Point';
+import Image from './Image';
 
 function About() {
-  const [data, setData] = useState({
-    heading: "",
-    subHeading: "",
-    description: []
-  });
+  const [points, setPoints] = useState([]);
+
   useEffect(() => {
-    getdata('/api/about-page').then((d) => setData(d))
+    // (async function () {
+    //   const data = await getdata("/api/about-page");
+    //   setPoints(data.points)
+    // })();
+
+    getdata('/api/about-page').then((d) => {
+      setPoints(d.points)
+    })
   }, []);
+
   return (
     <div>
-      <h4>{data.subHeading}</h4>
-      <h1>{data.heading}</h1>
-      <ul>
-        {data.description.map((item, index) => <li key={index}>{item}</li>)}
-      </ul>
+      <Image url="/api/food-image" />
+      {
+        points.map(item => <Point key={item.id} value={item.value} />)
+      }
     </div>
   )
 }
 
-export default About
+export default About;
