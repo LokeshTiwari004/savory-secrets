@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getdata from '../getdata';
+import getdata from '../utils/getdata';
 import Image from './Image';
 import Button from './Button'
 

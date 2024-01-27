@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import getdata from '../getdata';
+import getdata from '../utils/getdata';
 import Point from './Point';
 import Image from './Image';
 
