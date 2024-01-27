@@ -1,24 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
 
-function Filter({ filterBy }) {
-  const [query, setQuery] = useState(filterBy)
+function Filter({ name, filter, onChange, filterList }) {
   return (
     <div>
-      <label htmlFor={`${filterBy}-filter`}>Filter By: </label>
+      <label htmlFor={name}>Filter By {name} </label>
       <input
-        name={`${filterBy}-filter`}
-        id={filterBy}
+        name={name}
+        id={name}
         type="text"
-        value={query}
-        list={`${filterBy}-list`}
-        onChange={(e) => { setQuery(e.target.value) }}
+        value={filter.value}
+        list={`${name}-list`}
+        onChange={onChange}
         onFocus={(e) => { e.target.select() }}
       />
-      <datalist id={`${filterBy}-list`}>
-        <option value="India" />
-        <option value="Nepal" />
-        <option value="Bhutan" />
+      <datalist id={`${name}-list`}>
+        {filterList()}
       </datalist>
     </div>
   )
