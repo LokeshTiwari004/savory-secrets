@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button() {
+function Button({ value }) {
   return (
-    <button>Log In</button>
+    <button>{value}</button>
   )
 }
 
