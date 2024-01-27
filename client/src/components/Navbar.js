@@ -22,9 +22,10 @@ function Navbar() {
           </ul>
         </div>
         <div>
-          <Button />
+          <Button value="Log In" />
         </div>
       </nav>
+      <hr />
     </div>
   )
 }

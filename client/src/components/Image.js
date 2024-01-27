@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getimage from '../getimage';
+import getimage from '../utils/getimage';
 
 function Image({ url }) {
   const [image, setImage] = useState("");

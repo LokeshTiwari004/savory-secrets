@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import getdata from '../getdata';
+import getdata from '../utils/getdata';
 import Image from './Image';
+import Button from './Button'
 
 function Home() {
   const [data, setData] = useState({
@@ -26,6 +27,8 @@ function Home() {
         <ul>
           {data.description.map((item) => <li key={item.id}>{item.value}</li>)}
         </ul>
+        <Button value="Discover" />
+        <Button value="Learn More" />
       </div>
       <Image url="/api/food-image" />
     </>
