@@ -16,7 +16,7 @@ function Image({ url }) {
     //     setImage(fr.result)
     //   }
     // })
-  }, [])
+  }, [url])
   return (
     <div>
       <img src={image} alt='A delicious Illustration' style={{ width: "100px", height: "100px" }} />

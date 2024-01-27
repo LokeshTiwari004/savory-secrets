@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import Button from './Button'
+// import { Theme } from '@radix-ui/themes';
 
 function Navbar() {
   return (
@@ -21,7 +23,7 @@ function Navbar() {
           </ul>
         </div>
         <div>
-
+          <Button />
         </div>
       </nav>
     </div>

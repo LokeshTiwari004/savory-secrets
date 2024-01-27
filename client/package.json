@@ -9,7 +9,7 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "set HTTPS=true && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build"
   },
   "eslintConfig": {
@@ -31,6 +31,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.9",
+    "@babel/preset-react": "^7.23.3",
     "react-router-dom": "^6.21.3"
   }
 }
