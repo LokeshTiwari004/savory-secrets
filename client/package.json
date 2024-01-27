@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@radix-ui/themes": "^2.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
@@ -30,7 +31,6 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.21.3",
-    "@babel/plugin-proposal-private-property-in-object": "^"
+    "react-router-dom": "^6.21.3"
   }
 }
