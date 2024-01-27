@@ -5,6 +5,19 @@ import Filter from './Filter'
 
 function Discover() {
   const [query, setQuery] = useState("Search")
+  const [Veg, setVeg] = useState({
+    primary: "Veg",
+    secondary: "Non-Veg",
+    isPrimary: true
+  });
+  const toggleVeg = () => {
+    setVeg((preState) => {
+      return {
+        ...preState,
+        isPrimary: !preState.isPrimary
+      }
+    })
+  }
   const [country, setCountry] = useState({
     value: "",
     suggetions: ["Bharat", "Nepal", "Bhutan"],
@@ -24,7 +37,7 @@ function Discover() {
   return (
     <div>
       <Search query={query} setQuery={setQuery} />
-      <ToggleButton toggleValue={["Veg", "Non-Veg"]} />
+      <ToggleButton value={Veg} onToggle={toggleVeg} />
       <Filter
         name="Country"
         filter={country}

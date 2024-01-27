@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 
-function ToggleButton({ toggleValue }) {
-  const [def, secondary] = toggleValue
-  const [typical, setTypical] = useState(true)
+function ToggleButton({ value, onToggle }) {
   return (
     <div>
-      <button onClick={() => { setTypical((typical) => !typical) }}>
-        {typical ? def : secondary}
+      <button onClick={onToggle}>
+        {value.isPrimary ? value.primary : value.secondary}
       </button>
     </div>
   )
