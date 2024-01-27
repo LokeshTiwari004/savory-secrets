@@ -2,8 +2,10 @@ import React from 'react'
 
 function Button() {
   return (
-    <button>Log In</button>
+    <button>
+      Acoount
+    </button>
   )
 }
 
-export default Button
+export default Button;
