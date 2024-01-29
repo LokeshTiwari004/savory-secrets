@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useState, useEffect } from 'react';
-import getdata from '../utils/getdata';
+// import getdata from '../utils/getdata';
 import Point from './Point';
 import Image from './Image';
 import ApiContext from '../Contexts/ApiContext';
@@ -23,7 +23,7 @@ function About() {
 
   return (
     <div>
-      <Image url="/api/food-image" />
+      <Image url="/food-image" />
       {
         points.map(item => <Point key={item.id} value={item.value} />)
       }

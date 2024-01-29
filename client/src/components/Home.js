@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import getdata from '../utils/getdata';
+// import getdata from '../utils/getdata';
 import Image from './Image';
 import Button from './Button'
 import ApiContext from '../Contexts/ApiContext';
@@ -34,7 +34,7 @@ function Home() {
         <Button value="Discover" />
         <Button value="Learn More" />
       </div>
-      <Image url="/api/food-image" />
+      <Image url="/food-image" />
     </>
   )
 }
