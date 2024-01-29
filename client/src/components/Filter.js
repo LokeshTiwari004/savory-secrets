@@ -1,14 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
 
-function Filter({ name, filter, onChange, filterList }) {
+function Filter({ name, type = 'text', filter, onChange, filterList }) {
   return (
     <div>
       <label htmlFor={name}>Filter By {name} </label>
       <input
         name={name}
         id={name}
-        type="text"
+        type={type}
         value={filter.value}
         list={`${name}-list`}
         onChange={onChange}

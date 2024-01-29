@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Search({ query, setQuery }) {
+function Search({ query, onChange }) {
   return (
     <div>
       <label htmlFor="search" >Search: </label>
@@ -8,13 +8,16 @@ function Search({ query, setQuery }) {
         name="search"
         id="search"
         type="text"
-        value={query}
-        onChange={(e) => {
-          setQuery(e.target.value)
-        }}
+        value={query.value}
+        onChange={onChange}
         onFocus={(e) => {
           e.target.select()
         }} />
+      <datalist>
+        {
+          query.suggestions.map((suggestion) => <option key={suggestion.id} value={suggestion.value} />)
+        }
+      </datalist>
     </div>
   )
 }

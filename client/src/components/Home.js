@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import getdata from '../utils/getdata';
+import React, { useContext, useEffect, useState } from 'react'
+// import getdata from '../utils/getdata';
 import Image from './Image';
 import Button from './Button'
+import ApiContext from '../Contexts/ApiContext';
+import axios from 'axios';
 
 function Home() {
   const [data, setData] = useState({
@@ -9,15 +11,17 @@ function Home() {
     subHeading: "",
     description: []
   });
-  useEffect(() => {
-    // (async function () {
-    //   const data = await getdata("/api/home-page");
-    //   setData(data)
-    // })();
+  const baseAPIurl = useContext(ApiContext)
 
-    getdata('/api/home-page').then((d) => {
-      setData(d)
-    })
+  useEffect(() => {
+    (async function () {
+      const response = await axios.get(`${baseAPIurl}/home-page`);
+      setData(response.data)
+    })();
+
+    // getdata('/home-page').then((response) => {
+    //   setData(response.data)
+    // })
   }, []);
   return (
     <>
@@ -30,7 +34,7 @@ function Home() {
         <Button value="Discover" />
         <Button value="Learn More" />
       </div>
-      <Image url="/api/food-image" />
+      <Image url="/food-image" />
     </>
   )
 }
