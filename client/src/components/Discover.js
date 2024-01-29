@@ -4,7 +4,13 @@ import ToggleButton from './ToggleButton'
 import Filter from './Filter'
 
 function Discover() {
-  const [query, setQuery] = useState("Search")
+  const [query, setQuery] = useState({
+    search: {
+      value: "search",
+      suggetions: []
+    }
+  })
+  // const [query, setQuery] = useState("Search")
   const [Veg, setVeg] = useState({
     primary: "Veg",
     secondary: "Non-Veg",
@@ -40,6 +46,7 @@ function Discover() {
       <ToggleButton value={Veg} onToggle={toggleVeg} />
       <Filter
         name="Country"
+        type='text'
         filter={country}
         onChange={onCountryChange}
         filterList={countryList}
