@@ -9,7 +9,7 @@ function Image({ url }) {
   useEffect(() => {
     (async function () {
       const response = await axios.get(`${baseAPIurl}${url}`);
-      setImage(response.data)
+      setImage(response.data.image)
       // file_reader.onloadend = () => {
       //   setImage(file_reader.result)
       // }
