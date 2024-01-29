@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-// import getdata from '../utils/getdata';
+import React, { useEffect, useState } from 'react'
+import { get_json } from '../utils/getdata';
 import Image from './Image';
 import Button from './Button'
-import ApiContext from '../Contexts/ApiContext';
-import axios from 'axios';
 
 function Home() {
   const [data, setData] = useState({
@@ -11,17 +9,11 @@ function Home() {
     subHeading: "",
     description: []
   });
-  const baseAPIurl = useContext(ApiContext)
 
   useEffect(() => {
-    (async function () {
-      const response = await axios.get(`${baseAPIurl}/home-page`);
-      setData(response.data)
-    })();
-
-    // getdata('/home-page').then((response) => {
-    //   setData(response.data)
-    // })
+    get_json('/home-page').then((json) => {
+      setData(json)
+    })
   }, []);
   return (
     <>

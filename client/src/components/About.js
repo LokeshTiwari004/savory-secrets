@@ -1,24 +1,15 @@
-import React, { useContext } from 'react'
 import { useState, useEffect } from 'react';
-// import getdata from '../utils/getdata';
+import { get_json } from '../utils/getdata';
 import Point from './Point';
 import Image from './Image';
-import ApiContext from '../Contexts/ApiContext';
-import axios from 'axios';
 
 function About() {
   const [points, setPoints] = useState([]);
 
-  const baseAPIurl = useContext(ApiContext)
   useEffect(() => {
-    (async function () {
-      const res = await axios.get(`${baseAPIurl}/about-page`);
-      setPoints(res.data.points)
-    })();
-
-    // getdata('/about-page').then((res) => {
-    //   setPoints(res.data.points)
-    // })
+    get_json('/about-page').then((json) => {
+      setPoints(json.points)
+    })
   }, []);
 
   return (
