@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Search from './Search'
 import ToggleButton from './ToggleButton'
 import Filter from './Filter'
@@ -16,9 +16,6 @@ function Discover() {
       value: e.target.value,
     }))
   }
-  // useEffect(() => {
-  //   console.log(query)
-  // }, [query])
   // ----------------------------------------------
 
   // ##############################################

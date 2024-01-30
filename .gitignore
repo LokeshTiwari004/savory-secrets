@@ -9,7 +9,7 @@ client/build/
 app/venv/
 
 # app 
-app/app.live.py
+app/controller/app.live.py
 
 
 # assets
