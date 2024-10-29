@@ -4,13 +4,14 @@ from flask import Flask, make_response, jsonify, send_file, send_from_directory
 from flask_cors import CORS  #, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 cors = CORS(app, resources={
-  # r"/api/*": {
-  #   "origins": ["http://localhost:3000", "http://192.168.0.199"]
-  # }
   r"/api/*": {
-    "origins": "*"
+    "origins": "http://192.168.0.200:3000"
   }
+  # r"/api/*": {
+  #   "origins": "http://192.168.0.*:*"
+  # }
 })
 
 _home_page = "../static/home.json"
@@ -32,4 +33,4 @@ def food_image():
 
 if __name__ == "__main__":
   # app.run(debug=True)
-  app.run()
+  app.run(host="192.168.0.200", port=5000, debug=True, threaded=True)

@@ -1,5 +1,6 @@
+import { Button } from '@radix-ui/themes'
 import { Link } from 'react-router-dom'
-import Button from './Button'
+// import Button from './hx'
 
 function Navbar() {
   return (
@@ -22,7 +23,10 @@ function Navbar() {
           </ul>
         </div>
         <div>
-          <Button value="Log In" />
+          <Button>
+            Log In
+          </Button>
+          {/* <Button value="Log In" /> */}
         </div>
       </nav>
       <hr />

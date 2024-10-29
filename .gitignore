@@ -14,3 +14,7 @@ app/controller/app.live.py
 
 # assets
 app/assets
+
+
+# production data
+archive
